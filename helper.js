@@ -1,7 +1,7 @@
 // Arquivo com bug proposital para testar
 function getUserName(user) {
   // BUG: Não verifica se user existe antes de acessar user.name
-  return user.name.toUpperCase();
+  return user?.name?.toUpperCase() ?? '';
 }
 
 function processUser(userId) {
