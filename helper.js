@@ -2,7 +2,10 @@
 function getUserName(user) {
   // BUG: Não verifica se user existe antes de acessar user.name
   return user.name.toUpperCase();
-}
+  if (!user) {
+    return '';
+  }
+  return user.name.toUpperCase();
 
 function processUser(userId) {
   const user = getUserById(userId);
