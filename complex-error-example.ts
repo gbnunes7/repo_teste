@@ -79,7 +79,7 @@ class UserService {
       }
     };
     return this.addMetadata(enriched);
-  }
+        sms: false // Fix: Treat null notification preference as false
 
   private normalizePreferences(prefs: UserPreferences): UserPreferences {
     return {
