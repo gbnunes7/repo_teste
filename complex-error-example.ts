@@ -84,7 +84,7 @@ class UserService {
   private normalizePreferences(prefs: UserPreferences): UserPreferences {
     return {
       ...prefs,
-      notifications: this.processNotificationSettings(prefs.notifications)
+        sms: false // Normalize null to boolean false
     };
   }
 
