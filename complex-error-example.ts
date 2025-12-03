@@ -76,11 +76,11 @@ class UserService {
       profile: {
         ...user.profile,
         preferences: this.normalizePreferences(user.profile.preferences)
-      }
+      // Fix: When settings.sms is null, it should be normalized to false (boolean).
     };
     return this.addMetadata(enriched);
   }
-
+        sms: false // Previously returned null (object type)
   private normalizePreferences(prefs: UserPreferences): UserPreferences {
     return {
       ...prefs,
